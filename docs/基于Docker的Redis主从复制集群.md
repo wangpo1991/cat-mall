@@ -89,22 +89,37 @@ e51c05ccf34f00459ee28ca175095ae63cc1590b 10.4.11.106:7006@17006 master - 0 15942
 5、图形补充
 
 5.1 cluster info 
-![avatar](https://user-images.githubusercontent.com/62863976/86913461-4b6a7080-c151-11ea-9dd6-2800c70c3a13.png)
+
+![avatar](https://user-images.githubusercontent.com/62863976/86913497-57563280-c151-11ea-8da2-ff9170da1cb7.png)
+
 ![image-20200708181115665](/Users/wangpo/Library/Application Support/typora-user-images/image-20200708181115665.png)
 
-5.2 cluster nodes
-![avatar](Images/20200708181245599.jpg)
+5.2 cluster nodes 
+
+![avatar](https://user-images.githubusercontent.com/62863976/86913515-5cb37d00-c151-11ea-9bc4-d13d208bf164.png)
+
 ![image-20200708181245599](/Users/wangpo/Library/Application Support/typora-user-images/image-20200708181245599.png)
 
 5.3 故障演示
-![avatar](Images/20200708181332211.jpg)
+
+![avatar](https://user-images.githubusercontent.com/62863976/86914415-e7e14280-c152-11ea-9fda-9342eba08a0e.png)
+
 ![image-20200708181332211](/Users/wangpo/Library/Application Support/typora-user-images/image-20200708181332211.png)
-![avatar](Images/20200708181405996.jpg)
+
+![avatar](https://user-images.githubusercontent.com/62863976/86913595-781e8800-c151-11ea-8eb3-084936e81a69.png)
+
 ![image-20200708181405996](/Users/wangpo/Library/Application Support/typora-user-images/image-20200708181405996.png)
-![avatar](Images/20200708181457861.jpg)
+
+![avatar](https://user-images.githubusercontent.com/62863976/86913610-7ce33c00-c151-11ea-9c3a-db6af9b94bbc.png)
+
 ![image-20200708181457861](/Users/wangpo/Library/Application Support/typora-user-images/image-20200708181457861.png)
-![avatar](Images/20200708182032832.jpg)
+
+![avatar](https://user-images.githubusercontent.com/62863976/86913625-8076c300-c151-11ea-9086-99eb52000d87.png)
+
 ![image-20200708182032832](/Users/wangpo/Library/Application Support/typora-user-images/image-20200708182032832.png)
-![avatar](Images/image-20200708182757301.png)
+
+![avatar](https://user-images.githubusercontent.com/62863976/86913535-6341f480-c151-11ea-8fae-6252da8b8857.png)
+
 ![image-20200708182757301](/Users/wangpo/Library/Application Support/typora-user-images/image-20200708182757301.png)
+
 
