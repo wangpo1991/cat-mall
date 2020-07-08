@@ -89,7 +89,7 @@ e51c05ccf34f00459ee28ca175095ae63cc1590b 10.4.11.106:7006@17006 master - 0 15942
 5、图形补充
 
 5.1 cluster info 
-![avatar](Images/20200708181115665.jpg)
+![avatar](https://user-images.githubusercontent.com/62863976/86913461-4b6a7080-c151-11ea-9dd6-2800c70c3a13.png)
 ![image-20200708181115665](/Users/wangpo/Library/Application Support/typora-user-images/image-20200708181115665.png)
 
 5.2 cluster nodes
