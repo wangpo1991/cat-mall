@@ -33,11 +33,37 @@
             </activation>
         </profile>
     </profiles>
+<!--    <mirrors>-->
+<!--        <mirror>-->
+<!--            <id>repo.jenkins-ci.org</id>-->
+<!--            <url>https://repo.jenkins-ci.org/public/</url>-->
+<!--            <mirrorOf>m.g.o-public</mirrorOf>-->
+<!--        </mirror>-->
+<!--    </mirrors>-->
+
     <mirrors>
+        <!-- mirror
+         | Specifies a repository mirror site to use instead of a given repository. The repository that
+         | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+         | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+         |
         <mirror>
-            <id>repo.jenkins-ci.org</id>
-            <url>https://repo.jenkins-ci.org/public/</url>
-            <mirrorOf>m.g.o-public</mirrorOf>
+          <id>mirrorId</id>
+          <mirrorOf>repositoryId</mirrorOf>
+          <name>Human Readable Name for this Mirror.</name>
+          <url>http://my.repository.com/repo/path</url>
+        </mirror>  -->
+
+        <mirror>
+            <id>nexus</id>
+            <mirrorOf>*</mirrorOf>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+        </mirror>
+        <mirror>
+            <id>nexus-public-snapshots</id>
+            <mirrorOf>public-snapshots</mirrorOf> 
+            <url>https://maven.aliyun.com/nexus/content/repositories/snapshots/</url>
         </mirror>
     </mirrors>
+
 </settings>
