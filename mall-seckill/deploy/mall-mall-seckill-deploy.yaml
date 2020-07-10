@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: mall-seckill
-          image: $REGISTRY/$DOCKERHUB_NAMESPACE/$PROJECT_NAME:$PROJECT_VERSION
+          image: $REGISTRY/$DOCKERHUB_NAMESPACE/$PROJECT_NAME:latest
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -68,7 +68,7 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 20017
+      nodePort: 30017
   selector:
     app: mall-seckill
   type: NodePort

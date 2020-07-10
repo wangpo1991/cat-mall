@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: mall-member
-          image: $REGISTRY/$DOCKERHUB_NAMESPACE/$PROJECT_NAME:$PROJECT_VERSION
+          image: $REGISTRY/$DOCKERHUB_NAMESPACE/$PROJECT_NAME:latest
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -68,7 +68,7 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 20009
+      nodePort: 30009
   selector:
     app: mall-member
   type: NodePort
