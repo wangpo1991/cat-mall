@@ -12,7 +12,7 @@ pipeline {
     }
 
        environment {
-           DOCKER_CREDENTIAL_ID = 'dockerhub-id'
+           DOCKER_CREDENTIAL_ID = 'dockerhub-id-devops'
            GITHUB_CREDENTIAL_ID = 'github-id'
            KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
            REGISTRY = 'docker.io'
@@ -31,7 +31,7 @@ pipeline {
         stage ('单元测试') {
             steps {
                 container ('maven') {
-                    sh 'mvn clean -o -gs `pwd`/settings.xml test'
+                    sh 'mvn clean install package -o -gs `pwd`/settings.xml  test'
                 }
             }
         }
