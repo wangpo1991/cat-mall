@@ -31,7 +31,7 @@ pipeline {
         stage ('单元测试') {
             steps {
                 container ('maven') {
-                    sh 'mvn clean install package -o -gs `pwd`/settings.xml  test'
+                    sh 'mvn clean install  -o -gs `pwd`/settings.xml  test'
                 }
             }
         }
