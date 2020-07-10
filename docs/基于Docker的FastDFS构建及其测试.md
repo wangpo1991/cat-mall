@@ -110,3 +110,5 @@ sh jmeter
 
 [2、docker+fastdfs+springboot一键式搭建分布式文件服务器](https://blog.csdn.net/qq_37759106/article/details/82981023?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase)
 
+[3、镜像说明](https://hub.docker.com/r/qbanxiaoli/fastdfs)
+
