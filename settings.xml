@@ -3,10 +3,35 @@
         <pluginGroup>org.jenkins-ci.tools</pluginGroup>
         <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
     </pluginGroups>
-<!--    <localRepository>${PWD}/artifacts/m2</localRepository>-->
-  <profiles>
-
-	<profile>
+    <localRepository>${PWD}/artifacts/m2</localRepository>
+    <profiles>
+        <!-- Give access to Jenkins plugins -->
+        <profile>
+            <id>jenkins</id>
+            <activation>
+                <activeByDefault>true
+                </activeByDefault> <!-- change this to false, if you don't like to have it on per default -->
+            </activation>
+            <repositories>
+                <repository>
+                    <id>repo.jenkins-ci.org</id>
+                    <url>https://repo.jenkins-ci.org/public/</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>repo.jenkins-ci.org</id>
+                    <url>https://repo.jenkins-ci.org/public/</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
             <id>jdk-1.8</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -18,60 +43,12 @@
                 <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
             </properties>
         </profile>
-
-      <!-- Give access to Jenkins plugins -->
-      <profile>
-          <id>jenkins</id>
-          <activation>
-              <activeByDefault>true</activeByDefault> <!-- change this to false, if you don't like to have it on per default -->
-          </activation>
-<!--          <repositories>-->
-<!--              <repository>-->
-<!--                  <id>nexus-aliyun</id>-->
-<!--                  <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
-<!--              </repository>-->
-<!--              <repository>-->
-<!--                  <id>repo.jenkins-ci.org</id>-->
-<!--                  <url>https://repo.jenkins-ci.org/public/</url>-->
-<!--              </repository>-->
-<!--          </repositories>-->
-          <pluginRepositories>
-              <pluginRepository>
-                  <id>repo.jenkins-ci.org</id>
-                  <url>https://repo.jenkins-ci.org/public/</url>
-              </pluginRepository>
-          </pluginRepositories>
-      </profile>
-      <profile>
-          <id>sonar</id>
-          <activation>
-              <activeByDefault>true</activeByDefault>
-          </activation>
-      </profile>
-	
-	
-  </profiles>
-
-
-
-
+    </profiles>
     <mirrors>
-
-
         <mirror>
             <id>nexus-aliyun</id>
             <mirrorOf>central</mirrorOf>
             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
         </mirror>
-
-        <mirror>
-            <id>google-maven-central</id>
-            <name>Google Maven Central</name>
-            <url>https://maven-central.storage.googleapis.com/repos/central/data/</url>
-            <mirrorOf>central</mirrorOf>
-        </mirror>
-
     </mirrors>
-
-
 </settings>
