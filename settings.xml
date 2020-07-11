@@ -5,7 +5,7 @@
         <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
     </pluginGroups>
 
-    <localRepository>${PWD}/artifacts/m2</localRepository>
+<!--    <localRepository>${PWD}/artifacts/m2</localRepository>-->
 
 
     <mirrors>
@@ -28,70 +28,7 @@
     
     
   <profiles>
-    <!-- profile
-     | Specifies a set of introductions to the build process, to be activated using one or more of the
-     | mechanisms described above. For inheritance purposes, and to activate profiles via <activatedProfiles/>
-     | or the command line, profiles have to have an ID that is unique.
-     |
-     | An encouraged best practice for profile identification is to use a consistent naming convention
-     | for profiles, such as 'env-dev', 'env-test', 'env-production', 'user-jdcasey', 'user-brett', etc.
-     | This will make it more intuitive to understand what the set of introduced profiles is attempting
-     | to accomplish, particularly when you only have a list of profile id's for debug.
-     |
-     | This profile example uses the JDK version to trigger activation, and provides a JDK-specific repo.
-    <profile>
-      <id>jdk-1.4</id>
 
-      <activation>
-        <jdk>1.4</jdk>
-      </activation>
-
-      <repositories>
-        <repository>
-          <id>jdk14</id>
-          <name>Repository for JDK 1.4 builds</name>
-          <url>http://www.myhost.com/maven/jdk14</url>
-          <layout>default</layout>
-          <snapshotPolicy>always</snapshotPolicy>
-        </repository>
-      </repositories>
-    </profile>
-    -->
-
-    <!--
-     | Here is another profile, activated by the system property 'target-env' with a value of 'dev',
-     | which provides a specific path to the Tomcat instance. To use this, your plugin configuration
-     | might hypothetically look like:
-     |
-     | ...
-     | <plugin>
-     |   <groupId>org.myco.myplugins</groupId>
-     |   <artifactId>myplugin</artifactId>
-     |
-     |   <configuration>
-     |     <tomcatLocation>${tomcatPath}</tomcatLocation>
-     |   </configuration>
-     | </plugin>
-     | ...
-     |
-     | NOTE: If you just wanted to inject this configuration whenever someone set 'target-env' to
-     |       anything, you could just leave off the <value/> inside the activation-property.
-     |
-    <profile>
-      <id>env-dev</id>
-
-      <activation>
-        <property>
-          <name>target-env</name>
-          <value>dev</value>
-        </property>
-      </activation>
-
-      <properties>
-        <tomcatPath>/path/to/tomcat/instance</tomcatPath>
-      </properties>
-    </profile>
-    -->
 	<profile>
             <id>jdk-1.8</id>
             <activation>
@@ -104,35 +41,36 @@
                 <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
             </properties>
         </profile>
-      <!-- Give access to Jenkins plugins -->
-      <profile>
-          <id>jenkins</id>
-          <activation>
-              <activeByDefault>true</activeByDefault> <!-- change this to false, if you don't like to have it on per default -->
-          </activation>
-          <repositories>
-              <repository>
-                  <id>nexus-aliyun</id>
-                  <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-              </repository>
+<!--      -->
+<!--      &lt;!&ndash; Give access to Jenkins plugins &ndash;&gt;-->
+<!--      <profile>-->
+<!--          <id>jenkins</id>-->
+<!--          <activation>-->
+<!--              <activeByDefault>true</activeByDefault> &lt;!&ndash; change this to false, if you don't like to have it on per default &ndash;&gt;-->
+<!--          </activation>-->
+<!--          <repositories>-->
 <!--              <repository>-->
+<!--                  <id>nexus-aliyun</id>-->
+<!--                  <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+<!--              </repository>-->
+<!--&lt;!&ndash;              <repository>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <id>repo.jenkins-ci.org</id>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <url>https://repo.jenkins-ci.org/public/</url>&ndash;&gt;-->
+<!--&lt;!&ndash;              </repository>&ndash;&gt;-->
+<!--          </repositories>-->
+<!--          <pluginRepositories>-->
+<!--              <pluginRepository>-->
 <!--                  <id>repo.jenkins-ci.org</id>-->
 <!--                  <url>https://repo.jenkins-ci.org/public/</url>-->
-<!--              </repository>-->
-          </repositories>
-          <pluginRepositories>
-              <pluginRepository>
-                  <id>repo.jenkins-ci.org</id>
-                  <url>https://repo.jenkins-ci.org/public/</url>
-              </pluginRepository>
-          </pluginRepositories>
-      </profile>
-      <profile>
-          <id>sonar</id>
-          <activation>
-              <activeByDefault>true</activeByDefault>
-          </activation>
-      </profile>
+<!--              </pluginRepository>-->
+<!--          </pluginRepositories>-->
+<!--      </profile>-->
+<!--      <profile>-->
+<!--          <id>sonar</id>-->
+<!--          <activation>-->
+<!--              <activeByDefault>true</activeByDefault>-->
+<!--          </activation>-->
+<!--      </profile>-->
 	
 	
   </profiles>
