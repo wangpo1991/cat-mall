@@ -11,9 +11,9 @@ string(name: 'PROJECT_NAME', defaultValue: 'mall-cart', description: '')
 string(name: 'PROJECT_VERSION', defaultValue: 'v0.1', description: '')
 }
 environment {
- DOCKER_CREDENTIAL_ID = 'dockerhub-id-devops'
+ DOCKER_CREDENTIAL_ID = 'dockerhub-id'
  GITHUB_CREDENTIAL_ID = 'github-id'
- GITEE_CREDENTIAL_ID = 'gitee-id'
+  GITEE_CREDENTIAL_ID = 'gitee-id'
  KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
  REGISTRY = 'docker.io'
  DOCKERHUB_NAMESPACE = 'powang'
@@ -24,7 +24,7 @@ environment {
 stages {
   stage('拉取代码') {
     steps {
-      git(credentialsId: 'dockerhub-id-devops', url: 'https://github.com/wangpo1991/cat-mall.git', branch: 'master', changelog: true, poll: false)
+      git(credentialsId: 'gitee-id', url: 'https://gitee.com/wangpo1991/cat-mall.git', branch: 'master', changelog: true, poll: false)
       sh 'echo 正在构建服务 $PROJECT_NAME 版本号 $PROJECT_VERSION'
      container ('maven') {
       sh 'echo 正在编译打包服务 $PROJECT_NAME 版本号 $PROJECT_VERSION'
