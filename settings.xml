@@ -1,4 +1,9 @@
-<settings>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
     <pluginGroups>
         <pluginGroup>org.jenkins-ci.tools</pluginGroup>
         <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
@@ -44,11 +49,26 @@
             </properties>
         </profile>
     </profiles>
+<!--    <mirrors>-->
+<!--        <mirror>-->
+<!--            <id>nexus-aliyun</id>-->
+<!--            <mirrorOf>central</mirrorOf>-->
+<!--            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+<!--        </mirror>-->
+<!--    </mirrors>-->
+
     <mirrors>
+
         <mirror>
-            <id>nexus-aliyun</id>
-            <mirrorOf>central</mirrorOf>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <id>nexus</id>
+            <mirrorOf>*</mirrorOf>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
         </mirror>
+        <mirror>
+            <id>nexus-public-snapshots</id>
+            <mirrorOf>public-snapshots</mirrorOf> 
+            <url>https://maven.aliyun.com/nexus/content/repositories/snapshots/</url>
+        </mirror>
+
     </mirrors>
 </settings>
