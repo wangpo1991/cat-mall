@@ -11,13 +11,21 @@ string(name: 'PROJECT_NAME', defaultValue: 'mall-cart', description: '')
 string(name: 'PROJECT_VERSION', defaultValue: 'v0.1', description: '')
 }
 environment {
- DOCKER_CREDENTIAL_ID = 'dockerhub-id-devops'
- GITHUB_CREDENTIAL_ID = 'github-id'
  GITEE_CREDENTIAL_ID = 'gitee-id'
  KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
  REGISTRY = 'docker.io'
  DOCKERHUB_NAMESPACE = 'powang'
  GITHUB_ACCOUNT = 'wangpo1991'
+ SONAR_CREDENTIAL_ID = 'sonar-token-x'
+ BRANCH_NAME='master'
+}
+environment {
+ DOCKER_CREDENTIAL_ID = 'alibaba-dockerhub-id'
+ GITEE_CREDENTIAL_ID = 'gitee-id'
+ KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
+ REGISTRY = 'registry.cn-hangzhou.aliyuncs.com'
+ DOCKERHUB_NAMESPACE = 'pretty-devops'
+ GITEE_ACCOUNT = 'wangpo1991'
  SONAR_CREDENTIAL_ID = 'sonar-token'
  BRANCH_NAME='master'
 }
@@ -51,10 +59,11 @@ stages {
 stage ('代码构建并推送快照') {
     steps {
         container ('maven') {
-            sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/settings.xml clean package'
-            sh 'cd $PROJECT_NAME  &&  docker build -f Dockerfile -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
+//             sh 'mvn -o -Dmaven.test.skip=true -gs `pwd`/settings.xml clean package'
+            sh 'echo  "$DOCKER_PASSWORD" | docker login  --username="$DOCKER_USERNAME" $REGISTRY --password-stdin'
+            sh 'cd $PROJECT_NAME  &&  docker build -f Dockerfile -t $REGISTRY/$DOCKERHUB_NAMESPACE/$PROJECT_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
             withCredentials([usernamePassword(passwordVariable : 'DOCKER_PASSWORD' ,usernameVariable : 'DOCKER_USERNAME' ,credentialsId : "$DOCKER_CREDENTIAL_ID" ,)]) {
-                sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
+//                 sh 'echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin'
                 sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$PROJECT_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER'
             }
         }
@@ -94,7 +103,7 @@ stage('发布版本'){
             sh 'git config --global user.email "powang2020@gmail.com" '
             sh 'git config --global user.name "powang2020" '
             sh 'git tag -a $PROJECT_VERSION -m "$PROJECT_VERSION" '
-            sh 'git push http://$GIT_USERNAME:$GIT_PASSWORD@github.com/$GITHUB_ACCOUNT/cat-mall.git --tags --ipv4'
+            sh 'git push http://$GIT_USERNAME:$GIT_PASSWORD@github.com/$GITEE_ACCOUNT/cat-mall.git --tags --ipv4'
           }
         sh 'docker tag  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER $REGISTRY/$DOCKERHUB_NAMESPACE/$PROJECT_NAME:$PROJECT_VERSIONE '
         sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$PROJECT_NAME:$PROJECT_VERSION '
