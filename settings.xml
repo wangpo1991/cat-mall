@@ -1,5 +1,11 @@
 <settings>
 
+    <pluginGroups>
+        <pluginGroup>org.jenkins-ci.tools</pluginGroup>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+
+    <localRepository>${PWD}/artifacts/m2</localRepository>
 
 
     <mirrors>
