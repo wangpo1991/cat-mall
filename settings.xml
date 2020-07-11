@@ -4,6 +4,13 @@
 
     <mirrors>
 
+
+        <mirror>
+            <id>nexus-aliyun</id>
+            <mirrorOf>central</mirrorOf>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </mirror>
+
         <mirror>
             <id>google-maven-central</id>
             <name>Google Maven Central</name>
@@ -11,12 +18,6 @@
             <mirrorOf>central</mirrorOf>
         </mirror>
 
-        <mirror>
-            <id>nexus-aliyun</id>
-            <mirrorOf>central</mirrorOf>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-        </mirror>
-  
     </mirrors>
     
     
