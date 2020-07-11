@@ -47,26 +47,12 @@
             </properties>
         </profile>
     </profiles>
-<!--    <mirrors>-->
-<!--        <mirror>-->
-<!--            <id>nexus-aliyun</id>-->
-<!--            <mirrorOf>central</mirrorOf>-->
-<!--            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
-<!--        </mirror>-->
-<!--    </mirrors>-->
-
     <mirrors>
-
         <mirror>
-            <id>nexus</id>
-            <mirrorOf>*</mirrorOf>
-            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <id>nexus-aliyun</id>
+            <mirrorOf>central</mirrorOf>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
         </mirror>
-        <mirror>
-            <id>nexus-public-snapshots</id>
-            <mirrorOf>public-snapshots</mirrorOf> 
-            <url>https://maven.aliyun.com/nexus/content/repositories/snapshots/</url>
-        </mirror>
-
     </mirrors>
+
 </settings>
