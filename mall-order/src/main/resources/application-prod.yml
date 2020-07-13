@@ -4,11 +4,11 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/catmall_oms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://mysql-master.gulimall:3306/catmall_oms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
   rabbitmq:
-    host: localhost
+    host: rabbitmq.gulimall
     virtual-host: /
     publisher-confirm-type: correlated
     # publisher-confirms: true
@@ -24,11 +24,11 @@ spring:
     name: mall-order
   cloud:
     nacos:
-      server-addr: localhost:8848
+      server-addr: nacos.gulimall:8848
   session:
     store-type: redis
   redis:
-    host: localhost
+    host: redis.gulimall
   mvc:
     date-format: yyyy-MM-dd HH:mm:ss
 
