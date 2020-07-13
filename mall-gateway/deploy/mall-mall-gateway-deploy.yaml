@@ -68,7 +68,7 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 30007
+      nodePort: 31003
   selector:
     app: mall-gateway
   type: NodePort
